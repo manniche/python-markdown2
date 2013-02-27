@@ -27,9 +27,7 @@ def gen_aspn_cases(limit=0):
         f = codecs.open(join(base_dir, "r%04d.text" % i), "w", "utf-8")
         f.write(r["desc"])
         f.close()
-
-        for j, c in enumerate(sorted(r["comments"],
-                        key=operator.itemgetter("pub_date"))):
+        for j, c in enumerate(r["comments"]):
             text = _markdown_from_aspn_html(c["comment"])
             headline = c["title"].strip()
             if headline:
