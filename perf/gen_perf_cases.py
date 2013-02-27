@@ -20,7 +20,7 @@ def gen_aspn_cases(limit=0):
         return 
     os.makedirs(base_dir)
     sys.stdout.write("generate %s" % base_dir); sys.stdout.flush()
-    recipes_path = expanduser("~/as/code.as.com/db/aspn/recipes.pprint")
+    recipes_path = expanduser( os.path.abspath( "recipes.pprint" ) )
     recipe_dicts = eval(open(recipes_path).read())
     for i, r in enumerate(recipe_dicts):
         sys.stdout.write('.'); sys.stdout.flush()
